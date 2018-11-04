@@ -24,5 +24,8 @@ public class MainActivity extends DaggerAppCompatActivity {
         final Intent intent = new Intent( this, MainService.class );
         startService( intent );
 
+        final Intent jobIntent = new Intent( this, MainJobService.class);
+        MainJobService.enqueueWork( this, jobIntent );
+
     }
 }

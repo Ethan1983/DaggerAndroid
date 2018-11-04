@@ -12,4 +12,7 @@ public interface AppModule {
     @ContributesAndroidInjector( modules = StringModule.class )
     MainService mainService();
 
+    @ContributesAndroidInjector( modules = StringModule.class )
+    MainJobService mainJobService();
+
 }
