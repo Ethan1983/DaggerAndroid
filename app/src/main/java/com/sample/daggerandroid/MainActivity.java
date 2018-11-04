@@ -1,21 +1,19 @@
 package com.sample.daggerandroid;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
 import javax.inject.Inject;
 
-import dagger.android.AndroidInjection;
+import dagger.android.support.DaggerAppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends DaggerAppCompatActivity {
 
     @Inject
     String value;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        AndroidInjection.inject( this );
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

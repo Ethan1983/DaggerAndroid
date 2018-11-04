@@ -4,19 +4,19 @@ import android.app.Application;
 
 import dagger.BindsInstance;
 import dagger.Component;
-import dagger.android.AndroidInjectionModule;
+import dagger.android.AndroidInjector;
+import dagger.android.support.AndroidSupportInjectionModule;
 
 @Component( modules = {
         AppModule.class,
-        AndroidInjectionModule.class
+        AndroidSupportInjectionModule.class
 })
-public interface AppComponent {
+public interface AppComponent extends AndroidInjector<MainApplication> {
 
     void inject( MainApplication mainApplication );
 
     @Component.Builder
-    interface Builder {
-        @BindsInstance Builder application( Application application );
-        AppComponent build();
+    abstract class Builder extends AndroidInjector.Builder<MainApplication> {
+        @BindsInstance abstract Builder application( Application application );
     }
 }
