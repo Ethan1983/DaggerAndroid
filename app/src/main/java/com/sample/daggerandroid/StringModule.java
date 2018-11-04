@@ -4,7 +4,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-abstract class MainActivityModule {
+abstract class StringModule {
     @Provides
     static String providesString() {
         return "FooBar";

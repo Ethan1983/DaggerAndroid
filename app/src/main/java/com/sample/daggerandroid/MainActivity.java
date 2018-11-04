@@ -1,5 +1,6 @@
 package com.sample.daggerandroid;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.TextView;
 
@@ -19,6 +20,9 @@ public class MainActivity extends DaggerAppCompatActivity {
 
         final TextView text = findViewById( R.id.text );
         text.setText( value );
+
+        final Intent intent = new Intent( this, MainService.class );
+        startService( intent );
 
     }
 }
